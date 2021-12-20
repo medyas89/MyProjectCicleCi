@@ -9,7 +9,7 @@ jobs:
     executor:
       name: node/default
       tag: '10.15.3'
-    working_directory: https://github.com/medyas89/MyProjectCicleCi.git
+    working_directory: /root/project
     steps:
       - checkout
       - run: |
@@ -17,7 +17,7 @@ jobs:
           npm install
           npm test
       - persist_to_workspace:
-          root: https://github.com/medyas89/MyProjectCicleCi.git
+          root: /root/project
           paths:
             - report/*
 
@@ -25,9 +25,9 @@ jobs:
     docker:
       - image: katalonstudio/report-uploader:0.0.8
     environment:
-      PROJECT_ID: 322521
-      TYPE: junit
-      REPORT_PATH: test
+      PROJECT_ID: 331430
+      TYPE: katalon
+      REPORT_PATH: Test1
     steps:
       - attach_workspace:
           at: /katalon
