@@ -9,7 +9,7 @@ jobs:
     executor:
       name: node/default
       tag: '10.15.3'
-    working_directory: /root/MyProjectCicleCi
+    working_directory: https://github.com/medyas89/MyProjectCicleCi.git
     steps:
       - checkout
       - run: |
@@ -17,7 +17,7 @@ jobs:
           npm install
           npm test
       - persist_to_workspace:
-          root: /root/MyProjectCicleCi
+          root: https://github.com/medyas89/MyProjectCicleCi.git
           paths:
             - report/*
 
