@@ -23,7 +23,7 @@ jobs:
 
   upload-report:
     docker:
-      - image: katalonstudio/report-uploader:0.0.8
+      - image: cimg/node:10.15.3
     environment:
       PROJECT_ID: 331430
       TYPE: junit
