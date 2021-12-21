@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@4.1.0
+
 jobs:
 
   test:
@@ -19,10 +22,12 @@ jobs:
             - report/*
 
   upload-report:
+    docker:
+      - image: katalonstudio/report-uploader:0.0.8
     environment:
       PROJECT_ID: 331430
-      TYPE: katalon
-      REPORT_PATH: Test1
+      TYPE: junit
+      REPORT_PATH: test0
     steps:
       - attach_workspace:
           at: /katalon
