@@ -31,7 +31,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /katalon
-      - run: uploader.sh
+      - run: uploader.shell
 
 workflows:
   version: 2.1
